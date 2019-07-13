@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>015</title>
+    <script>
+        window.onload = () => {
+            let inputan;
+            // let result; //for check number;
+            let result = 0;
+            let resultStr = '';
+            do {
+                inputan = window.prompt("Masukkan Umur:");
+                if (inputan == '=') {
+                    break;
+                }
+                if (!inputan) {
+                    inputan = 0;
+                    result = 0;
+                    break;
+                } else {
+                    inputan = parseInt(inputan), 10;
+                    if (isNaN(inputan)) {
+                        alert('tolong input Angka dengan nilai yang benar');
+                    } else {
+                        result += inputan;
+                        resultStr += (' + ' + String(inputan));
+
+                    }
+                }
+            } while ((Number.isInteger(inputan) || inputan == '=') || !Number.isInteger(inputan));
+
+            document.getElementById('input').innerHTML += 'Nilai Input: ' + resultStr.substring(2);
+            // if year is divisible by 400 then is_leap_year
+            // else if year is divisible by 100 then not_leap_year
+            // else if year is divisible by 4 then is_leap_year
+            // else not_leap_year
+
+            document.getElementById('output').innerHTML += `Output Adalah: ${result}`;
+        }
+    </script>
+</head>
+
+<body>
+    <p id="input"></p>
+    <p id="output"></p>
+</body>
+
+</html>

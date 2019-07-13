@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function dataType(n) {
+            // regexp = /\b[0-9A-F]{6}\b/gi; //for hexa
+            let result;
+            //please kindly use '' for hexa and octadecimal test
+            if (/^(0x[0-9a-f]{2})(,0x[0-9a-f]{2})*$/i
+                .test(n.toString()) == true) {
+                result = 'Hexadecimal Numbers';
+
+            } else if (/^0o[0-7]*$/g.test(n.toString()) == true) {
+                result = 'Octadecimal Numbers';
+
+            } else if (/^[01]+$/.test(n.toString(2)) == true) { //regex binary
+                result = 'Binary Numbers';
+            } else if (typeof n === 'number') {
+                if (n % 1 === 0) {
+                    result = 'Output Integer';
+                } else {
+                    result = 'Output Float';
+                }
+            } else if (typeof n === 'object') {
+                if (n.constructor === Array) {
+                    result = 'Output Array';
+                } else {
+                    result = 'Output Object';
+                }
+            } else {
+                result = 'Output String';
+            }
+            return result;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

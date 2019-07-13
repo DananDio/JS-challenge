@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02</title>
+    <script>
+        window.onload = () => {
+            let inputan;
+            // let result; //for check number;
+            let result;
+            do {
+                inputan = window.prompt("Give the Scores:");
+                if (!inputan) {
+                    inputan = 0;
+                    break;
+                } else {
+                    inputan = parseInt(inputan), 10;
+                    if (isNaN(inputan) || inputan > 100) {
+                        alert('tolong input Angka dengan nilai yang benar');
+                    }
+                }
+
+
+            } while (!Number.isInteger(inputan) || inputan > 100);
+            document.getElementById('input').innerHTML += `Nilai Input: ${inputan}`;
+            if (inputan >= 90) {
+                result = 'A';
+            } else if (inputan >= 80) {
+                result = 'B';
+            } else if (inputan >= 70) {
+                result = 'C';
+            } else if (inputan >= 60) {
+                result = 'D';
+            } else {
+                result = 'E';
+            }
+            document.getElementById('output').innerHTML += `Nilai output: ${result}`;
+        }
+    </script>
+</head>
+
+<body>
+    <p id="input"></p>
+    <p id="output"></p>
+</body>
+
+</html>

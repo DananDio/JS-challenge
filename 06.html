@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            let inputan;
+            // let result; //for check number;
+            let result;
+            do {
+                inputan = window.prompt("Masukkan Input Pertama:");
+                if (!inputan) {
+                    inputan = 0;
+                    break;
+                } else {
+                    inputan = parseInt(inputan), 10;
+                    if (isNaN(inputan)) {
+                        alert('tolong input Angka dengan nilai yang benar');
+                    }
+                }
+
+
+            } while (!Number.isInteger(inputan));
+            document.getElementById('first').innerHTML += `Nilai Input Pertama: ${inputan}`;
+
+            do {
+                var inputan2 = window.prompt("Masukkan Input Kedua:");
+                if (!inputan2) {
+                    inputan2 = 0;
+                    break;
+                } else {
+                    inputan2 = parseInt(inputan2), 10;
+                    if (isNaN(inputan2)) {
+                        alert('tolong input Angka dengan nilai yang benar');
+                    }
+                }
+
+
+            } while (!Number.isInteger(inputan2));
+            document.getElementById('second').innerHTML += `Nilai Input Kedua: ${inputan2}`;
+            let arr = [];
+
+            while (inputan < inputan2 + 1) {
+                arr.push(inputan++);
+            }
+            document.getElementById('output').innerHTML += arr.join(', ');
+        }
+    </script>
+</head>
+
+<body>
+    <p id="first"></p>
+    <p id="second"></p>
+    <p id="output"></p>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            let inputan = prompt('Masukkan Kalimat');
+            // let result; //for check number;
+            re = /[^A-Za-z0-9]/g;
+            let cleanInput = inputan.toLowerCase().replace(re, '');
+            let reverseStr = cleanInput.split('').reverse().join('');
+
+            let result = cleanInput === reverseStr ? 'Palindrome' : 'Bukan Palindrome';
+
+            document.getElementById('input').innerHTML += `Nilai Input: ${inputan}`;
+
+            document.getElementById('output').innerHTML += `Output Adalah: ${result}`;
+        }
+    </script>
+</head>
+
+<body>
+    <p id="input"></p>
+    <p id="output"></p>
+</body>
+
+</html>

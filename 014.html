@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            const people = [{
+                    id: 1,
+                    name: 'Udin',
+                    age: 12
+                },
+                {
+                    id: 1,
+                    name: 'Wati',
+                    age: 51
+                },
+                {
+                    id: 1,
+                    name: 'Budi',
+                    age: 34
+                },
+                {
+                    id: 1,
+                    name: 'Agus',
+                    age: 16
+                },
+                {
+                    id: 1,
+                    name: 'Sari',
+                    age: 19
+                },
+                {
+                    id: 1,
+                    name: 'Ririn',
+                    age: 21
+                },
+            ]
+
+            var output = people.filter(person => person.age <= 20).reduce((a, b) => {
+                return a + 'id : ' + b.id + ' name ' + b.name + ' age : ' + b.age + '<br>'
+            }, '');
+
+            // document.getElementById('input').innerHTML += input;
+            document.getElementById('output').innerHTML += output;
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <p id="input"></p>
+    <p id="output"></p>
+</body>
+
+</html>

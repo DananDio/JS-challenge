@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+
+            let arr = [];
+            let i = 1;
+            while (i < 100 + 1) {
+                if (i % 100 === 0) {
+                    arr.push('Kelipatan Seratus');
+                } else if (i % 2 === 0) {
+                    if (i % 5 === 0) {
+                        arr.push('Genap Kelipatan lima');
+                    } else {
+                        arr.push('Genap');
+                    }
+                } else {
+                    if (i % 5 === 0) {
+                        arr.push('Ganjil Kelpatan Lima');
+                    } else {
+                        arr.push('Ganjil');
+                    }
+                }
+                i++;
+            }
+            document.getElementById('output').innerHTML += "Output Adalah : <br>" + arr.join('<br>');
+        }
+    </script>
+</head>
+
+<body>
+    <p id="first"></p>
+    <p id="second"></p>
+    <p id="output"></p>
+</body>
+
+</html>

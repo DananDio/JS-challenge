@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        console.log('Please type the number with \' \' ')
+
+        function numConvert(n, from, to) {
+            let result;
+            switch (from) {
+                case 'dec':
+                    switch (to) {
+                        case 'hex':
+                            result = (n).toString(16);
+                            break;
+
+                        case 'oct':
+                            result = (n).toString(8);
+
+
+                            break;
+
+                        default:
+                            result = (n).toString(2);
+                            break;
+                    }
+
+                    break;
+
+                case 'hex':
+                    switch (to) {
+                        case 'dec':
+                            result = parseInt(String(result), 10);
+                            break;
+
+                        case 'oct':
+                            result = parseInt(n.toString(), 16).toString(8);
+
+                            break;
+
+                        default:
+                            result = parseInt(n.toString(), 16).toString(2);
+                            break;
+                    }
+
+                    break;
+                case 'oct':
+                    switch (to) {
+                        case 'hex':
+                            result = parseInt(n.toString(), 8).toString(16);
+                            break;
+
+                        case 'dec':
+                            result = parseInt(n.toString(), 8).toString(10);
+
+                            break;
+
+                        default:
+                            result = parseInt(n.toString(), 8).toString(2);
+                            break;
+                    }
+
+                    break;
+                case 'bin':
+                    switch (to) {
+                        case 'hex':
+                            result = parseInt(n.toString(), 2).toString(16);
+                            break;
+
+                        case 'dec':
+                            result = parseInt(n.toString(), 2).toString(10);
+
+                            break;
+
+                        default:
+                            result = parseInt(n.toString(), 2).toString(8);
+                            break;
+                    }
+
+                    break;
+
+                default:
+                    console.log('Wrong Typing');
+
+                    break;
+            }
+
+            return result;
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

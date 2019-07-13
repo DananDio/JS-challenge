@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01</title>
+    <script>
+        window.onload = () => {
+            let inputan = prompt('Input');
+            console.log(typeof inputan);
+            document.getElementById('input').innerHTML += inputan;
+            document.getElementById('Output').innerHTML += inputan.length;
+
+        }
+    </script>
+</head>
+
+<body>
+    <p id="input">Input : </p>
+    <p id="Output">Output: </p>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            const fruits = [{
+                    name: 'Pepaya',
+                    price: 3000
+                },
+                {
+                    name: 'Jagung',
+                    price: 2000
+                },
+                {
+                    name: 'Mengkudu',
+                    price: 4000
+                },
+                {
+                    name: 'Kiwi',
+                    price: 6000
+                },
+            ]
+
+            var output = fruits.reduce((a, b) => {
+                return a + b.name + ': ' + b.price + '<br>'
+            }, '')
+
+            // document.getElementById('input').innerHTML += input;
+            document.getElementById('output').innerHTML += output;
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <p id="input"></p>
+    <p id="output"></p>
+</body>
+
+</html>

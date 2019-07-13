@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let arr = [];
+
+        function arrayIn() {
+            let inputText = document.getElementById('inputan').value;
+            arr.unshift(inputText);
+            document.getElementById('inputan').value = '';
+            document.getElementById('out').disabled = false;
+            document.getElementById('in').disabled = true;
+
+        }
+
+        function toggleButton(ref, bttnID) {
+            document.getElementById(bttnID).disabled = ((ref.value !== ref.defaultValue) ? false : true);
+        }
+        window.onload = () => {
+            document.getElementById('out').setAttribute("disabled", "");
+        }
+
+        function arrayOut() {
+            arr.shift();
+            if (arr.length == 0) {
+                document.getElementById('out').setAttribute("disabled", "");
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" id="inputan" onkeyup="toggleButton(this,'in');">
+    <button id="in" onclick="arrayIn()" disabled="disabled">IN</button>
+    <button id="out" onclick="arrayOut()">OUT</button>
+
+</body>
+
+</html>
